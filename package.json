@@ -1,0 +1,23 @@
+{
+  "name": "haimacar",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.13"
+  },
+  "scripts": {
+    "start": "npm-run-all -p watch-less rs-start",
+    "build": "npm-run-all -s build-less rs-build",
+    "rs-build": "react-scripts build",
+    "rs-start": "react-scripts start",
+    "watch-less": "autoless ./src",
+    "build-less": "autoless ./src --no-watch",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "autoless": "^0.1.7",
+    "npm-run-all": "^4.1.1"
+  }
+}
