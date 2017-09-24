@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-
+import React, { Component } from 'react'
+import Loading from './pages/Loading'
 
 class App extends Component {
   render() {
     return (
       <div className="app">
-        <h1>App</h1>
+        <Loading />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

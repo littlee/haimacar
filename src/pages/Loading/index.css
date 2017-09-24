@@ -1,0 +1,66 @@
+.loading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.loading-img-car,
+.loading-img-light {
+  width: 100%;
+}
+.loading-img-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.loading-car {
+  position: relative;
+}
+.loading-info {
+  text-align: center;
+  color: #5c5c5c;
+}
+.loading-title {
+  position: relative;
+  width: 6em;
+  margin: 0 auto;
+}
+.loading-title-active {
+  color: #ee9618;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: width 0.3s ease;
+}
+.loading-progress {
+  width: 60%;
+  margin: 10px auto;
+  position: relative;
+}
+.loading-progress-total {
+  height: 5px;
+  background-color: #5c5c5c;
+  border-radius: 3px;
+}
+.loading-progress-active {
+  height: 5px;
+  background-color: #ee9618;
+  border-radius: 3px;
+  width: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease;
+}
+.loading-subtitle {
+  text-align: center;
+  font-size: 12px;
+}
+.loading-subtitle > span {
+  display: inline-block;
+}
+.loading-subtitle > span + span {
+  margin-left: 15px;
+}
