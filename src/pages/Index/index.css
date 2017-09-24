@@ -1,0 +1,23 @@
+.index {
+  overflow: hidden;
+}
+.index-car {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/images/index_car.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.index-accessory {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(/images/index_accessory.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
