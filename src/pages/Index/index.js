@@ -15,6 +15,32 @@ class Index extends React.Component {
   }
 
   render() {
+    var part = winWidth/4
+    var carStart = -(winWidth/2)
+    var carMoved = Math.abs(this.state.carX - carStart)/part
+
+    var viewCarTranY = 100 * (1 - carMoved)
+    var viewCarOpa = carMoved
+
+    if (viewCarTranY < 0) {
+      viewCarTranY = 0
+    }
+    if (viewCarOpa > 1) {
+      viewCarOpa = 1
+    }
+
+    var accStart = winWidth/2
+    var accMoved = Math.abs(this.state.accX - accStart)/part
+    var viewAccTranY = 100 * (1 - accMoved)
+    var viewAccOpa = accMoved
+
+    if (viewAccTranY < 0) {
+      viewAccTranY = 0
+    }
+    if (viewAccOpa > 1) {
+      viewAccOpa = 1
+    }
+
     return (
       <div className="full index">
         <Draggable
@@ -56,6 +82,18 @@ class Index extends React.Component {
             zIndex: this.state.accLayer
           }}/>
         </Draggable>
+
+        <img src="/images/index_logo.png" alt="" className="index-logo"/>
+
+        <img src="/images/index_view_car.png" alt="" className="index-view-car" style={{
+          transform: `translateY(${viewCarTranY}px)`,
+          opacity: viewCarOpa
+        }}/>
+        <img src="/images/index_view_accessory.png" alt="" className="index-view-acc" style={{
+          transform: `translateY(${viewAccTranY}px)`,
+          opacity: viewAccOpa
+        }}/>
+
       </div>
       )
   }
@@ -86,14 +124,28 @@ class Index extends React.Component {
     })
   }
 
-  _stopCar = () => {
+  _stopCar = (e, position) => {
+    if (position.x > -(winWidth/4)) {
+      this.setState({
+        carX: 0,
+        carLayer: 999
+      })
+      return
+    }
     this.setState({
       carX: -(winWidth/2),
       carLayer: 1
     })
   }
 
-  _stopAcc = () => {
+  _stopAcc = (e, position) => {
+    if (position.x < winWidth/4) {
+      this.setState({
+        accX: 0,
+        accLayer: 999
+      })
+      return
+    }
     this.setState({
       accX: (winWidth/2),
       accLayer: 1

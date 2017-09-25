@@ -21,3 +21,24 @@
   background-size: 100%;
   background-repeat: no-repeat;
 }
+.index-logo {
+  position: relative;
+  display: block;
+  z-index: 99999;
+  width: 125px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  pointer-events: none;
+}
+.index-view-car,
+.index-view-acc {
+  position: absolute;
+  z-index: 999;
+  display: block;
+  width: 122px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 100px;
+}

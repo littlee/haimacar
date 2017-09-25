@@ -19,3 +19,6 @@ body {
 .app {
   height: 100%;
 }
+.hide {
+  display: none !important;
+}
