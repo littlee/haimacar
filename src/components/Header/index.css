@@ -1,0 +1,29 @@
+.header {
+  padding: 10px 30px;
+}
+.header:before,
+.header:after {
+  content: "";
+  display: table;
+}
+.header:after {
+  clear: both;
+}
+.header-car {
+  width: 24px;
+  height: 24px;
+  background-size: 100%;
+  background-image: url(/images/car_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.header-bar {
+  margin-top: 5px;
+  width: 12px;
+  height: 12px;
+  background-size: 100%;
+  background-image: url(/images/menu_icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  float: right;
+}

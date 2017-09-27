@@ -1,0 +1,52 @@
+.cars {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(/images/car_bg.jpg);
+}
+.cars-btns {
+  width: 75%;
+  margin: 15px auto;
+}
+.cars-btn {
+  background-color: #202024;
+  border-radius: 5px;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 10px;
+  height: 50px;
+  user-select: none;
+  border: none;
+  width: 100%;
+  color: white;
+  outline: 0;
+  font-size: 14px;
+}
+.cars-btn-group {
+  display: flex;
+  justify-content: space-between;
+}
+.cars-btn-group .cars-btn {
+  width: 49%;
+}
+.cars-btn:hover,
+.cars-btn:focus,
+.cars-btn:active {
+  background-color: #ee9618;
+  background-image: url(/images/car_active.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.cars-btn > img,
+.cars-btn > span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.cars-btn > img {
+  margin-right: 10px;
+}
+.cars-slick {
+  margin: 30px 50px;
+}
+.cars-slick-item > img {
+  width: 100%;
+}
