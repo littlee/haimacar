@@ -11,6 +11,8 @@
   position: absolute;
   top: 0;
   left: 0;
+  opacity: 0;
+  transition: opacity 3s linear;
 }
 .loading-car {
   position: relative;
@@ -32,7 +34,7 @@
   left: 0;
   overflow-x: hidden;
   white-space: nowrap;
-  transition: width 0.3s ease;
+  transition: width 3s linear;
 }
 .loading-progress {
   width: 60%;
@@ -52,7 +54,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  transition: width 0.3s ease;
+  transition: width 3s linear;
 }
 .loading-subtitle {
   text-align: center;

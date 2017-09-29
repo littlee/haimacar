@@ -1,0 +1,62 @@
+.model {
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  &.out {
+    background: url(/images/model_out_bg.jpg);
+  }
+
+  &.in {
+    background: #202024;
+  }
+
+  &-out {
+    &-title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px;
+
+      &-text {
+        display: inline-block;
+        position: relative;
+        padding: 10px;
+        
+        &:before {
+          content: "";
+          width: 100%;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 3px;
+          background-image: linear-gradient(to right, transparent, white, transparent);
+        }
+      }
+    }
+
+    &-main {
+      width: 90%;
+      margin: auto;
+      background-color: #333;
+    }
+  }
+
+  &-btns {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 15px auto;
+  }
+
+  &-btn {
+    width: 49%;
+    background-color: #feba00;
+    text-align: center;
+    padding: 20px 0;
+    border-radius: 5px;
+
+    &.active {
+      background-color: #3e3e40;
+    }
+  }
+}

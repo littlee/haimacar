@@ -88,10 +88,14 @@ class Index extends React.Component {
         <img src="/images/index_view_car.png" alt="" className="index-view-car" style={{
           transform: `translateY(${viewCarTranY}px)`,
           opacity: viewCarOpa
+        }} onClick={() => {
+          this.props.onViewCar && this.props.onViewCar()
         }}/>
         <img src="/images/index_view_accessory.png" alt="" className="index-view-acc" style={{
           transform: `translateY(${viewAccTranY}px)`,
           opacity: viewAccOpa
+        }} onClick={() => {
+          this.props.onViewAcc && this.props.onViewAcc()
         }}/>
 
       </div>

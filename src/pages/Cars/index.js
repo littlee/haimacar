@@ -25,39 +25,57 @@ class Cars extends React.Component {
         <Header />
 
         <div className="cars-btns">
-          <div className="cars-btn" onTouchStart={()=>{}}>
+          <div
+            className="cars-btn"
+            onTouchStart={() => {}}
+            onClick={() => {
+              this.props.onClickModel && this.props.onClickModel()
+            }}
+          >
             <img src="/images/haima_s5.png" width="57" alt="" />
             <span>海马 S5</span>
           </div>
-          <div className="cars-btn">
+          <div
+            className="cars-btn"
+            onClick={() => {
+              this.props.onClickModel && this.props.onClickModel()
+            }}
+          >
             <img src="/images/haima_s5_y.png" width="47" alt="" />
             <span>海马 S5 young</span>
           </div>
 
           <div className="cars-btn-group">
-            <div className="cars-btn">
+            <div
+              className="cars-btn"
+              onClick={() => {
+                this.props.onClickModel && this.props.onClickModel()
+              }}
+            >
               <img src="/images/haima_m6.png" width="40" alt="" />
               <span>海马 M6</span>
             </div>
-            <div className="cars-btn">
+            <div
+              className="cars-btn"
+              onClick={() => {
+                this.props.onClickModel && this.props.onClickModel()
+              }}
+            >
               <img src="/images/haima_m3.png" width="40" alt="" />
               <span>海马 M3</span>
             </div>
           </div>
         </div>
 
-        <div
-          id="cars-slick"
-          className="cars-slick"
-        >
+        <div id="cars-slick" className="cars-slick">
           <div className="cars-slick-item">
-            <img src="/images/sp1.jpg" alt=""/>
+            <img src="/images/sp1.jpg" alt="" />
           </div>
           <div className="cars-slick-item">
-            <img src="/images/sp2.jpg" alt=""/>
+            <img src="/images/sp2.jpg" alt="" />
           </div>
           <div className="cars-slick-item">
-            <img src="/images/sp3.jpg" alt=""/>
+            <img src="/images/sp3.jpg" alt="" />
           </div>
         </div>
       </div>
