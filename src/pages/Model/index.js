@@ -3,6 +3,7 @@ import './index.css'
 import Header from '../../components/Header'
 import ModelBtns from './ModelBtns'
 import ModelOut from './ModelOut'
+import ModelIn from './ModelIn'
 
 class Model extends React.Component {
   constructor(props) {
@@ -15,10 +16,11 @@ class Model extends React.Component {
   render() {
     return (
       <div className={'full model ' + this.state.type}>
-        <Header />
-        <ModelOut />
+        <Header onClickBar={this.props.onClickBar} onClickCar={this.props.onClickCar}/>
+        {
+          this.state.type === 'out' ? <ModelOut /> : <ModelIn />
+        }
         <ModelBtns type={this.state.type} onChange={this._changeType} />
-        <div style={{color: 'red', textAlign: 'center'}}>内饰暂未实现</div>
       </div>
     )
   }

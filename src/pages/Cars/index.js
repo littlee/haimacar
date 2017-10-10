@@ -1,7 +1,7 @@
 import React from 'react'
 import './index.css'
 import Header from '../../components/Header'
-var $ = window.jQuery
+var Swiper = window.Swiper
 
 class Cars extends React.Component {
   constructor(props) {
@@ -12,24 +12,28 @@ class Cars extends React.Component {
   }
 
   componentDidMount() {
-    $('#cars-slick').slick({
-      infinite: true,
-      speed: 1000,
-      fade: true
+    new Swiper('#cars-swiper', {
+      nextButton: '.swiper-button-next',
+      prevButton: '.swiper-button-prev',
+      loop: true
     })
   }
 
   render() {
     return (
       <div className="full cars">
-        <Header />
+        <Header
+          onClickBar={this.props.onClickBar}
+          onClickCar={this.props.onClickCar}
+        />
 
         <div className="cars-btns">
           <div
             className="cars-btn"
             onTouchStart={() => {}}
             onClick={() => {
-              this.props.onClickModel && this.props.onClickModel()
+              // this.props.onClickModel && this.props.onClickModel()
+              window.location = '/?page=model&model=s5'
             }}
           >
             <img src="/images/haima_s5.png" width="57" alt="" />
@@ -37,8 +41,12 @@ class Cars extends React.Component {
           </div>
           <div
             className="cars-btn"
+            style={{
+              paddingTop: 15
+            }}
             onClick={() => {
-              this.props.onClickModel && this.props.onClickModel()
+              // this.props.onClickModel && this.props.onClickModel()
+              window.location = '/?page=model&model=s5young'
             }}
           >
             <img src="/images/haima_s5_y.png" width="47" alt="" />
@@ -48,8 +56,12 @@ class Cars extends React.Component {
           <div className="cars-btn-group">
             <div
               className="cars-btn"
+              style={{
+                paddingTop: 15
+              }}
               onClick={() => {
-                this.props.onClickModel && this.props.onClickModel()
+                // this.props.onClickModel && this.props.onClickModel()
+                window.location = '/?page=model&model=s5young'
               }}
             >
               <img src="/images/haima_m6.png" width="40" alt="" />
@@ -57,8 +69,12 @@ class Cars extends React.Component {
             </div>
             <div
               className="cars-btn"
+              style={{
+                paddingTop: 15
+              }}
               onClick={() => {
-                this.props.onClickModel && this.props.onClickModel()
+                // this.props.onClickModel && this.props.onClickModel()
+                window.location = '/?page=model&model=s5young'
               }}
             >
               <img src="/images/haima_m3.png" width="40" alt="" />
@@ -67,16 +83,23 @@ class Cars extends React.Component {
           </div>
         </div>
 
-        <div id="cars-slick" className="cars-slick">
-          <div className="cars-slick-item">
-            <img src="/images/sp1.jpg" alt="" />
+        <div className="cars-swiper swiper-container" id="cars-swiper">
+          <div className="swiper-wrapper">
+            <div className="swiper-slide">
+              <img src="/images/car_s5.png" alt=""/>
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/car_s5_young.png" alt=""/>
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/car_m6.png" alt=""/>
+            </div>
+            <div className="swiper-slide">
+              <img src="/images/car_m3.png" alt=""/>
+            </div>
           </div>
-          <div className="cars-slick-item">
-            <img src="/images/sp2.jpg" alt="" />
-          </div>
-          <div className="cars-slick-item">
-            <img src="/images/sp3.jpg" alt="" />
-          </div>
+          <div className="swiper-button-next" />
+          <div className="swiper-button-prev" />
         </div>
       </div>
     )

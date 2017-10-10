@@ -1,0 +1,121 @@
+.product {
+  background-color: white;
+}
+.product-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+}
+.product-swiper .swiper-slide > img {
+  width: 100%;
+}
+.product-swiper .swiper-button-prev {
+  width: 20px;
+  height: 92px;
+  margin-top: -46px;
+  background-size: 100%;
+  background-image: url(/images/car_arrow_left.png);
+}
+.product-swiper .swiper-button-next {
+  width: 20px;
+  height: 92px;
+  margin-top: -46px;
+  background-size: 100%;
+  background-image: url(/images/car_arrow_right.png);
+}
+.product-items {
+  color: #333;
+  width: 75%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+@media (max-width: 320px) {
+  .product-items {
+    width: 90%;
+  }
+}
+.product-item {
+  background-color: #d8d8d8;
+  position: relative;
+  border-radius: 5px;
+  user-select: none;
+}
+.product-item + .product-item {
+  margin-top: 15px;
+}
+.product-item:hover,
+.product-item:focus,
+.product-item:active {
+  background-color: #f28322;
+}
+.product-item:hover .product-item-title,
+.product-item:focus .product-item-title,
+.product-item:active .product-item-title {
+  color: #383838;
+}
+.product-item:hover .product-item-more,
+.product-item:focus .product-item-more,
+.product-item:active .product-item-more {
+  border-color: white;
+  color: white;
+}
+.product-item:before,
+.product-item:after {
+  content: "";
+  display: table;
+}
+.product-item:after {
+  clear: both;
+}
+.product-item-main {
+  overflow: hidden;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 65px;
+}
+.product-item-aside {
+  padding: 8px;
+  float: right;
+  border-left: 1px dashed #c4c4c4;
+}
+.product-item-more {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #777;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+  line-height: 35px;
+}
+.product-item-img {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 66px;
+  height: 90px;
+  margin: auto;
+  position: absolute;
+}
+.product-item-title {
+  color: #777;
+}
+.product-item-subtitle {
+  color: #777;
+  font-size: 12px;
+}
+.product-arrow {
+  width: 12px;
+  height: 12px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(/images/prod_arrow.png);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  margin: auto;
+}

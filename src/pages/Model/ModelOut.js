@@ -1,35 +1,34 @@
 import React from 'react'
-var $ = window.jQuery
+import qs from 'qs'
+var query = qs.parse(window.location.search.slice(1))
+var object2vrPlayer = window.object2vrPlayer
+var object2vrSkin = window.object2vrSkin
+
+var modelMap = {
+  's5': 'S5',
+  's5young': 'S5 Young',
+  'm6': 'M6',
+  'm3': 'M3'
+}
 
 class ModelOut extends React.Component {
   componentDidMount() {
-    $('#model-out-main').ThreeSixty({
-      totalFrames: 42,
-      endFrame: 42,
-      currentFrame: 1,
-      imgList: '.threesixty_images',
-      progress: '.spinner',
-      imagePath: '/images/s5young/',
-      filePrefix: '',
-      ext: '.jpg',
-      width: window.innerWidth * 0.9,
-      height: window.innerWidth * 0.9 * (232/320),
-      navigation: false
-    })
+    var obj = new object2vrPlayer('model-out-container')
+    new object2vrSkin(obj)
+    obj.readConfigUrl(`/model_${query.model}.xml`)
   }
 
   render() {
     return (
       <div className="model-out">
         <div className="model-out-title">
-          <span className="model-out-title-text">海马 S5 Young</span>
+          <span className="model-out-title-text">海马 {modelMap[query.model]}</span>
         </div>
         <div className="model-out-main">
-          <div className="threesixty" id="model-out-main">
-            <div className="spinner">
-              <span>0%</span>
-            </div>
-            <ol className="threesixty_images" />
+          <div id="model-out-container" style={{
+            width: window.innerWidth * 0.9,
+            height: window.innerWidth * 0.9
+          }}>
           </div>
         </div>
       </div>

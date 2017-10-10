@@ -2,6 +2,15 @@ import React from 'react'
 import './index.css'
 import Draggable from 'react-draggable'
 const winWidth = window.innerWidth
+var $ = window.jQuery
+
+function hideArrow() {
+  $('.index-arrow').hide()
+}
+
+function showArrow() {
+  $('.index-arrow').show()
+}
 
 class Index extends React.Component {
   constructor(props) {
@@ -43,6 +52,8 @@ class Index extends React.Component {
 
     return (
       <div className="full index">
+        <div className="index-arrow index-car-arrow"></div>
+        <div className="index-arrow index-acc-arrow"></div>
         <Draggable
           axis="x"
           bounds={{
@@ -60,7 +71,9 @@ class Index extends React.Component {
           <div className="index-car" style={{
             backgroundPositionX: -this.state.carX,
             zIndex: this.state.carLayer
-          }}/> 
+          }}>
+          </div>
+
         </Draggable>
 
         <Draggable
@@ -103,6 +116,7 @@ class Index extends React.Component {
   }
 
   _starCar = () => {
+    hideArrow()
     this.setState({
       carLayer: 99,
       accLayer: 1
@@ -110,6 +124,7 @@ class Index extends React.Component {
   }
 
   _starAcc = () => {
+    hideArrow()
     this.setState({
       carLayer: 1,
       accLayer: 99
@@ -136,6 +151,7 @@ class Index extends React.Component {
       })
       return
     }
+    showArrow()
     this.setState({
       carX: -(winWidth/2),
       carLayer: 1
@@ -150,6 +166,7 @@ class Index extends React.Component {
       })
       return
     }
+    showArrow()
     this.setState({
       accX: (winWidth/2),
       accLayer: 1

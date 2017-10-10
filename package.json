@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "form_to_object": "^1.0.8",
+    "qs": "^6.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-draggable": "^3.0.3",
-    "react-scripts": "1.0.13"
+    "react-scripts": "1.0.13",
+    "superagent": "^3.6.3"
   },
   "scripts": {
     "start": "npm-run-all -p watch-less rs-start",
@@ -19,5 +22,6 @@
   "devDependencies": {
     "autoless": "^0.1.7",
     "npm-run-all": "^4.1.1"
-  }
+  },
+  "proxy": "http://m.haima.uclee.com"
 }

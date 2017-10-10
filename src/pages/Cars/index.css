@@ -6,6 +6,7 @@
 .cars-btns {
   width: 75%;
   margin: 15px auto;
+  margin-top: 30px;
 }
 .cars-btn {
   background-color: #202024;
@@ -44,9 +45,20 @@
 .cars-btn > img {
   margin-right: 10px;
 }
-.cars-slick {
-  margin: 30px 50px;
-}
-.cars-slick-item > img {
+.cars-swiper .swiper-slide > img {
   width: 100%;
+}
+.cars-swiper .swiper-button-prev {
+  width: 20px;
+  height: 92px;
+  margin-top: -46px;
+  background-size: 100%;
+  background-image: url(/images/car_arrow_left.png);
+}
+.cars-swiper .swiper-button-next {
+  width: 20px;
+  height: 92px;
+  margin-top: -46px;
+  background-size: 100%;
+  background-image: url(/images/car_arrow_right.png);
 }

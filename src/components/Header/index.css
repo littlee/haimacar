@@ -9,6 +9,13 @@
 .header:after {
   clear: both;
 }
+.header-logo {
+  padding-top: 3px;
+  margin-left: -15px;
+}
+.header-logo > img {
+  width: 100px;
+}
 .header-car {
   width: 24px;
   height: 24px;
@@ -18,12 +25,24 @@
   background-position: center;
 }
 .header-bar {
-  margin-top: 5px;
+  float: right;
+}
+.header-bar-icon {
+  display: inline-block;
+  vertical-align: middle;
   width: 12px;
   height: 12px;
   background-size: 100%;
   background-image: url(/images/menu_icon.png);
   background-repeat: no-repeat;
   background-position: center;
-  float: right;
+}
+.header-bar-icon.dark {
+  background-image: url(/images/menu_icon_dark.png);
+}
+.header-bar-text {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 12px;
+  margin-left: 5px;
 }

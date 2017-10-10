@@ -26,7 +26,7 @@
   left: 0;
   bottom: 0;
   height: 3px;
-  background-image: linear-gradient(to right, transparent, #ffffff, transparent);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0), #ffffff, rgba(255, 255, 255, 0));
 }
 .model-out-main {
   width: 90%;

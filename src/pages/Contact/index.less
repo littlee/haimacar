@@ -1,0 +1,78 @@
+.contact {
+  background-color: #1d2124;
+
+  &-logo {
+    width: 40%;
+    display: block;
+    margin: 30px auto;
+  }
+
+  &-form {
+    display: block;
+    width: 65%;
+    margin: auto;
+
+    &-item {
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    &-control {
+      width: 100%;
+      padding: 15px;
+      padding-left: 35px;
+      color: white;
+      display: block;
+      background-color: #292d38;
+      border: none;
+      border-radius: 5px;
+      outline: 0;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    &-icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 10px;
+      margin: auto;
+      display: block;
+      background-size: 100%;
+      background-repeat: no-repeat;
+
+      &.phone {
+        background-image: url(/images/phone_icon.png);
+      }
+
+      &.name {
+        background-image: url(/images/name_icon.png);
+      }
+    }
+
+    &-btn {
+      background-color: #f28221;
+      display: block;
+      color: white;
+      border-radius: 5px;
+      width: 100%;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      outline: 0;
+
+      &-wrap {
+        padding-top: 15px;
+      }
+    }
+
+    &-err {
+      background-color: #E74C3C;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+  }
+}
