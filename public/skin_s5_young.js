@@ -3,7 +3,7 @@
 // Filename: skin.ggsk
 // Generated 周五 10月 6 22:38:36 2017
 
-function object2vrSkin(player, base) {
+function object2vrSkinS5Young(player, base) {
 	var me = this
 	var flag = false
 	var nodeMarker = new Array()

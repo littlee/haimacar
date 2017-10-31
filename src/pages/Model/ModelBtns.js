@@ -3,7 +3,7 @@ import React from 'react'
 
 const ModelBtns = (props) => {
   return (
-    <div className="model-btns">
+    <div className={'model-btns ' + props.type}>
       <div className={'model-btn' + (props.type === 'out' ? ' active' : '')} onClick={() => {
         props.onChange && props.onChange('out')
       }}>

@@ -1,18 +1,34 @@
-.cars {
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-image: url(/images/car_bg.jpg);
+.cars-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
 }
 .cars-btns {
   width: 75%;
-  margin: 15px auto;
-  margin-top: 30px;
+  margin: auto;
+}
+.cars-btns-wrap {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  top: 13%;
+  left: 0;
+}
+.cars-btns-wrap .hide {
+  display: none;
 }
 .cars-btn {
-  background-color: #202024;
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url(/images/car_default_bg.png);
+  background-repeat: no-repeat;
+  background-size: 97% 82%;
+  background-position: center center;
   border-radius: 5px;
-  text-align: center;
-  padding-top: 10px;
+  padding-left: 25%;
+  padding-top: 15px;
   margin-bottom: 10px;
   height: 50px;
   user-select: none;
@@ -21,6 +37,7 @@
   color: white;
   outline: 0;
   font-size: 14px;
+  position: relative;
 }
 .cars-btn-group {
   display: flex;
@@ -32,9 +49,19 @@
 .cars-btn:hover,
 .cars-btn:focus,
 .cars-btn:active {
-  background-color: #ee9618;
-  background-image: url(/images/car_active.png);
-  background-size: 100% 100%;
+  background-image: url(/images/car_active_bg.png);
+}
+.cars-btn:hover:before,
+.cars-btn:focus:before,
+.cars-btn:active:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: -50%;
+  left: 0;
+  background-image: url(/images/car_active_light.png);
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 .cars-btn > img,
@@ -45,6 +72,9 @@
 .cars-btn > img {
   margin-right: 10px;
 }
+.cars-swiper {
+  position: relative;
+}
 .cars-swiper .swiper-slide > img {
   width: 100%;
 }
@@ -53,6 +83,7 @@
   height: 92px;
   margin-top: -46px;
   background-size: 100%;
+  top: 70%;
   background-image: url(/images/car_arrow_left.png);
 }
 .cars-swiper .swiper-button-next {
@@ -60,5 +91,23 @@
   height: 92px;
   margin-top: -46px;
   background-size: 100%;
+  top: 70%;
   background-image: url(/images/car_arrow_right.png);
+}
+.cars-swiper-mask {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  background-image: linear-gradient(to bottom, transparent, #000000);
+  z-index: 9999;
+}
+.cars-intro-bg {
+  width: 100%;
+  display: block;
+}
+.cars-intro-ani {
+  position: absolute;
 }

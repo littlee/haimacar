@@ -31,9 +31,7 @@ class Header extends React.Component {
         ) : (
           <div
             className="header-car"
-            onClick={() => {
-              this.props.onClickCar && this.props.onClickCar()
-            }}
+            onClick={this.props.prev}
           />
         )}
       </div>

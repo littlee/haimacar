@@ -5,12 +5,16 @@ var assets = [
   '/images/car_active.png',
   '/images/car_arrow_left.png',
   '/images/car_arrow_right.png',
-  '/images/car_bg.jpg',
   '/images/car_icon.png',
-  '/images/car_m3.png',
-  '/images/car_m6.png',
-  '/images/car_s5.png',
-  '/images/car_s5_young.png',
+  '/images/car_intro_bg.jpg',
+  '/images/car_intro_man.png',
+  '/images/car_intro_light.png',
+  '/images/car_intro_text.png',
+  '/images/car_intro_sub_text.png',
+  '/images/car_intro_scroll.png',
+  '/images/acc_intro_scroll.png',
+  '/images/acc_intro_bg.jpg',
+  '/images/acc_intro_text.png',
   '/images/haima_m3.png',
   '/images/haima_m6.png',
   '/images/haima_s5.png',
@@ -19,15 +23,19 @@ var assets = [
   '/images/icon_folder.png',
   '/images/index_accessory.png',
   '/images/index_car.png',
-  '/images/index_logo.png',
+  '/images/index_logo.gif',
+  '/images/index_logo_sub.png',
   '/images/index_view_accessory.png',
   '/images/index_view_car.png',
-  '/images/loading_car.png',
-  '/images/loading_light.png',
   '/images/menu_icon.png',
-  '/images/model_out_bg.jpg',
+  '/images/model_out_s5.jpg',
+  '/images/model_out_m3.jpg',
   '/images/name_icon.png',
   '/images/phone_icon.png',
+  '/images/oil_drop.png',
+  '/images/hand_expo.png',
+  '/images/leave_left.png',
+  '/images/leave_right.png',
   '/images/prod_arrow.png'
 ]
 
@@ -50,12 +58,12 @@ class Loading extends React.Component {
       <div className="full loading">
         <div className="loading-car">
           <img
-            src="/images/loading_car.png"
+            src="/images/loading_car1.png"
             className="loading-img-car"
             alt=""
           />
           <img
-            src="/images/loading_light.png"
+            src="/images/loading_light1.png"
             className="loading-img-light"
             alt=""
             style={{

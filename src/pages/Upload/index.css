@@ -1,0 +1,35 @@
+.upload .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.upload-link {
+  display: block;
+}
+.upload-full-img {
+  width: 100%;
+  display: block;
+}
+.upload .swiper-slide {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+.upload-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+  color: #eee;
+}
+.upload-msg {
+  background-color: #d8d8d8;
+  text-align: center;
+  padding: 50px 10px;
+}
+.upload-msg-btn {
+  display: block;
+  margin: auto;
+  width: 46.875%;
+}

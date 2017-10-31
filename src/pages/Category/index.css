@@ -1,0 +1,121 @@
+.category {
+  background-color: white;
+}
+.category-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 999;
+}
+.category-swiper .swiper-slide > img {
+  width: 100%;
+}
+.category-swiper .swiper-button-prev {
+  width: 20px;
+  height: 92px;
+  margin-top: -46px;
+  background-size: 100%;
+  background-image: url(/images/car_arrow_left.png);
+}
+.category-swiper .swiper-button-next {
+  width: 20px;
+  height: 92px;
+  margin-top: -46px;
+  background-size: 100%;
+  background-image: url(/images/car_arrow_right.png);
+}
+.category-items {
+  color: #333;
+  width: 75%;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+@media (max-width: 320px) {
+  .category-items {
+    width: 90%;
+  }
+}
+.category-item {
+  background-color: #d8d8d8;
+  position: relative;
+  border-radius: 5px;
+  user-select: none;
+}
+.category-item + .category-item {
+  margin-top: 15px;
+}
+.category-item:hover,
+.category-item:focus,
+.category-item:active {
+  background-color: #f28322;
+}
+.category-item:hover .category-item-title,
+.category-item:focus .category-item-title,
+.category-item:active .category-item-title {
+  color: #383838;
+}
+.category-item:hover .category-item-more,
+.category-item:focus .category-item-more,
+.category-item:active .category-item-more {
+  border-color: white;
+  color: white;
+}
+.category-item:before,
+.category-item:after {
+  content: "";
+  display: table;
+}
+.category-item:after {
+  clear: both;
+}
+.category-item-main {
+  overflow: hidden;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 65px;
+}
+.category-item-aside {
+  padding: 8px;
+  float: right;
+  border-left: 1px dashed #c4c4c4;
+}
+.category-item-more {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #777;
+  border-radius: 50%;
+  font-size: 12px;
+  text-align: center;
+  line-height: 35px;
+}
+.category-item-img {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 66px;
+  height: 90px;
+  margin: auto;
+  position: absolute;
+}
+.category-item-title {
+  color: #777;
+}
+.category-item-subtitle {
+  color: #777;
+  font-size: 12px;
+}
+.category-arrow {
+  width: 12px;
+  height: 12px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-image: url(/images/prod_arrow.png);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  margin: auto;
+}

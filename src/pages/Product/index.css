@@ -1,5 +1,11 @@
 .product {
-  background-color: white;
+  background-color: #171611;
+  background-image: url(/images/product_bg.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.product .scrollbar-track-y {
+  visibility: hidden;
 }
 .product-header {
   position: absolute;
@@ -9,28 +15,15 @@
   width: 100%;
   z-index: 999;
 }
-.product-swiper .swiper-slide > img {
-  width: 100%;
-}
-.product-swiper .swiper-button-prev {
-  width: 20px;
-  height: 92px;
-  margin-top: -46px;
-  background-size: 100%;
-  background-image: url(/images/car_arrow_left.png);
-}
-.product-swiper .swiper-button-next {
-  width: 20px;
-  height: 92px;
-  margin-top: -46px;
-  background-size: 100%;
-  background-image: url(/images/car_arrow_right.png);
-}
 .product-items {
   color: #333;
-  width: 75%;
+  width: 85%;
   margin: 0 auto;
-  padding: 30px 0;
+  height: 75%;
+  position: relative;
+  top: 15%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 @media (max-width: 320px) {
   .product-items {
@@ -38,84 +31,73 @@
   }
 }
 .product-item {
-  background-color: #d8d8d8;
-  position: relative;
-  border-radius: 5px;
-  user-select: none;
+  font-size: 14px;
+  margin-bottom: 10px;
+  transition: opacity 0.3s ease;
 }
-.product-item + .product-item {
-  margin-top: 15px;
+.product-item.fade {
+  opacity: 0.5;
 }
-.product-item:hover,
-.product-item:focus,
-.product-item:active {
-  background-color: #f28322;
-}
-.product-item:hover .product-item-title,
-.product-item:focus .product-item-title,
-.product-item:active .product-item-title {
-  color: #383838;
-}
-.product-item:hover .product-item-more,
-.product-item:focus .product-item-more,
-.product-item:active .product-item-more {
-  border-color: white;
-  color: white;
-}
-.product-item:before,
-.product-item:after {
-  content: "";
-  display: table;
-}
-.product-item:after {
-  clear: both;
-}
-.product-item-main {
-  overflow: hidden;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 65px;
-}
-.product-item-aside {
-  padding: 8px;
-  float: right;
-  border-left: 1px dashed #c4c4c4;
-}
-.product-item-more {
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #777;
-  border-radius: 50%;
-  font-size: 12px;
-  text-align: center;
-  line-height: 35px;
-}
-.product-item-img {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 66px;
-  height: 90px;
-  margin: auto;
-  position: absolute;
-}
-.product-item-title {
-  color: #777;
-}
-.product-item-subtitle {
-  color: #777;
-  font-size: 12px;
-}
-.product-arrow {
-  width: 12px;
-  height: 12px;
-  background-size: 100%;
+.product-item-header {
+  background-image: url(/images/product_item.png);
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-image: url(/images/prod_arrow.png);
-  position: fixed;
+  text-align: center;
+  color: #888;
+  padding: 12px 0;
+  position: relative;
+  z-index: 9;
+}
+.product-item-header-text {
+  display: inline-block;
+  vertical-align: middle;
+}
+.product-item-header-img {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+.product-item-body {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom: 4px solid #f28322;
+  position: relative;
+}
+.product-item-body:before {
+  content: "";
+  width: 100%;
+  position: absolute;
   left: 0;
-  right: 0;
-  bottom: 30px;
-  margin: auto;
+  top: -15px;
+  height: 15px;
+}
+.product-item.active .product-item-header {
+  color: white;
+  background-image: url(/images/product_item_active.png);
+}
+.product-item.active .product-item-header:before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: #f28322;
+  border-width: 8px;
+  right: 18px;
+  bottom: -14px;
+}
+.product-item.active .product-item-body:before {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.product-sub-item {
+  font-size: 12px;
+  border-bottom: 1px solid white;
+  padding: 10px 0;
+}
+.product-sub-item-num {
+  float: right;
 }

@@ -4,6 +4,8 @@ import Header from '../../components/Header'
 import ModelBtns from './ModelBtns'
 import ModelOut from './ModelOut'
 import ModelIn from './ModelIn'
+import qs from 'qs'
+var query = qs.parse(window.location.search.slice(1))
 
 class Model extends React.Component {
   constructor(props) {
@@ -15,8 +17,10 @@ class Model extends React.Component {
 
   render() {
     return (
-      <div className={'full model ' + this.state.type}>
-        <Header onClickBar={this.props.onClickBar} onClickCar={this.props.onClickCar}/>
+      <div className={'full model ' + this.state.type + ' ' + query.model}>
+        <Header onClickBar={this.props.onClickBar} onClickCar={this.props.onClickCar} prev={() => {
+          window.location = '/?page=cars&initialSlide=1'
+        }}/>
         {
           this.state.type === 'out' ? <ModelOut /> : <ModelIn />
         }

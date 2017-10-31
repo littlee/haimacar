@@ -11,6 +11,33 @@
   background-size: 100%;
   background-repeat: no-repeat;
 }
+.index-car-expo {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+}
+.index-car-leave-left,
+.index-car-leave-right {
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+}
+.index-car-leave-left {
+  left: 0;
+  width: 41.40625%;
+}
+.index-car-leave-right {
+  right: 0;
+  width: 40%;
+}
+.index-car.active .index-car-expo,
+.index-car.active .index-car-leave-left,
+.index-car.active .index-car-leave-right {
+  visibility: visible;
+}
 .index-accessory {
   position: absolute;
   top: 0;
@@ -21,15 +48,80 @@
   background-size: 100%;
   background-repeat: no-repeat;
 }
+.index-accessory-oil,
+.index-accessory-wheel {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.index-accessory-oil {
+  visibility: hidden;
+  animation-timing-function: ease-in-out;
+}
+.index-accessory-wheel {
+  visibility: hidden;
+}
+.index-accessory.active .index-accessory-oil {
+  visibility: visible;
+}
+.index-accessory.active .index-accessory-wheel {
+  visibility: visible;
+}
+.index-intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+.index-intro-car {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url(/images/index_car.png);
+  background-repeat: no-repeat;
+  animation-name: introCar;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
+.index-intro-acc {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10%;
+  height: 100%;
+  background-image: url(/images/index_accessory.png);
+  background-repeat: no-repeat;
+  background-position: top right;
+  animation-name: introAcc;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+}
 .index-logo {
   position: relative;
   display: block;
   z-index: 99999;
-  width: 125px;
-  margin-left: auto;
-  margin-right: auto;
   margin-top: 30px;
   pointer-events: none;
+}
+.index-logo-main {
+  width: 125px;
+  margin: auto;
+  display: block;
+}
+.index-logo-sub {
+  width: 80px;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
 }
 .index-view-car,
 .index-view-acc {
@@ -46,14 +138,14 @@
   width: 20px;
   height: 20px;
   position: absolute;
-  left: 30%;
-  top: 50%;
+  left: 45%;
+  top: 40%;
   z-index: 9999;
   opacity: 0.7;
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
-  animation-name: swipeRight;
+  animation-name: swipeLeft;
 }
 .index-car-arrow:before {
   content: "";
@@ -64,7 +156,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
 }
 .index-car-arrow:after {
   content: "";
@@ -75,20 +167,20 @@
   position: absolute;
   top: 11px;
   left: 0;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 .index-acc-arrow {
   width: 20px;
   height: 20px;
   position: absolute;
-  right: 30%;
-  top: 50%;
+  right: 45%;
+  top: 40%;
   z-index: 9999;
   opacity: 0.7;
   animation-duration: 2s;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
-  animation-name: swipeLeft;
+  animation-name: swipeRight;
 }
 .index-acc-arrow:before {
   content: "";
@@ -99,7 +191,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  transform: rotate(-45deg);
+  transform: rotate(45deg);
 }
 .index-acc-arrow:after {
   content: "";
@@ -110,7 +202,35 @@
   position: absolute;
   top: 11px;
   left: 0;
-  transform: rotate(45deg);
+  transform: rotate(-45deg);
+}
+@keyframes introCar {
+  0% {
+    width: 50%;
+  }
+  30% {
+    width: 70%;
+  }
+  70% {
+    width: 30%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@keyframes introAcc {
+  0% {
+    width: 50%;
+  }
+  30% {
+    width: 30%;
+  }
+  70% {
+    width: 70%;
+  }
+  100% {
+    width: 50%;
+  }
 }
 @keyframes swipeRight {
   from {

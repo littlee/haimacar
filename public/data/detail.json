@@ -347,5 +347,50 @@
         ]
       }
     ]
+  },
+  "s5dhb": {
+    "name": "底护板",
+    "screen": [
+      {
+        "type": "single",
+        "color": "#faaa33",
+        "image": "/images/detail/s5/dhb_scr_1.jpg",
+        "animation": []
+      },
+      {
+        "type": "single",
+        "color": "#faaa33",
+        "image": "/images/detail/s5/dhb_scr_2.jpg",
+        "animation": []
+      },
+      {
+        "type": "multiple",
+        "color": "#fff",
+        "title": "加厚设计",
+        "subtitle": "耐用 噪声小 安全",
+        "images": [
+          {
+            "src": "/images/detail/s5/dhb_1.jpg",
+            "text": "服帖车窗的每一道流线"
+          },
+          {
+            "src": "/images/detail/s5/dhb_2.jpg",
+            "text": "弧度设计"
+          },
+          {
+            "src": "/images/detail/s5/dhb_3.jpg",
+            "text": "镜面工艺 炫亮设计"
+          },
+          {
+            "src": "/images/detail/s5/dhb_4.jpg",
+            "text": "海马专车定制"
+          },
+          {
+            "src": "/images/detail/s5/dhb_5.jpg",
+            "text": "原车贴合"
+          }
+        ]
+      }
+    ]
   }
 }

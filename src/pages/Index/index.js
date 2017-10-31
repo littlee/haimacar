@@ -1,32 +1,26 @@
 import React from 'react'
 import './index.css'
 import Draggable from 'react-draggable'
+
 const winWidth = window.innerWidth
-var $ = window.jQuery
-
-function hideArrow() {
-  $('.index-arrow').hide()
-}
-
-function showArrow() {
-  $('.index-arrow').show()
-}
 
 class Index extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      carX: -(winWidth/2),
-      accX: (winWidth/2),
+      carX: -(winWidth / 2),
+      accX: winWidth / 2,
       carLayer: 1,
-      accLayer: 1
+      accLayer: 1,
+      intro: true,
+      type: ''
     }
   }
 
   render() {
-    var part = winWidth/4
-    var carStart = -(winWidth/2)
-    var carMoved = Math.abs(this.state.carX - carStart)/part
+    var part = winWidth / 4
+    var carStart = -(winWidth / 2)
+    var carMoved = Math.abs(this.state.carX - carStart) / part
 
     var viewCarTranY = 100 * (1 - carMoved)
     var viewCarOpa = carMoved
@@ -38,8 +32,8 @@ class Index extends React.Component {
       viewCarOpa = 1
     }
 
-    var accStart = winWidth/2
-    var accMoved = Math.abs(this.state.accX - accStart)/part
+    var accStart = winWidth / 2
+    var accMoved = Math.abs(this.state.accX - accStart) / part
     var viewAccTranY = 100 * (1 - accMoved)
     var viewAccOpa = accMoved
 
@@ -50,14 +44,25 @@ class Index extends React.Component {
       viewAccOpa = 1
     }
 
+    var { type } = this.state
+
     return (
       <div className="full index">
-        <div className="index-arrow index-car-arrow"></div>
-        <div className="index-arrow index-acc-arrow"></div>
+        <div
+          style={{
+            display: 'none'
+          }}
+        >
+          <img src="/images/c1.gif" alt="" />
+          <img src="/images/c2.gif" alt="" />
+          <img src="/images/c3.gif" alt="" />
+          <img src="/images/c4.gif" alt="" />
+        </div>
+
         <Draggable
           axis="x"
           bounds={{
-            left: -(winWidth/2),
+            left: -(winWidth / 2),
             right: 0
           }}
           position={{
@@ -68,19 +73,24 @@ class Index extends React.Component {
           onDrag={this._dragCar}
           onStop={this._stopCar}
         >
-          <div className="index-car" style={{
-            backgroundPositionX: -this.state.carX,
-            zIndex: this.state.carLayer
-          }}>
+          <div
+            className={'index-car' + (type === 'car' ? ' active' : '')}
+            style={{
+              backgroundPositionX: -this.state.carX,
+              zIndex: this.state.carLayer
+            }}
+          >
+            <img src="/images/hand_expo.png" alt="" className={'index-car-expo animated' + (type === 'car' ? ' fadeIn' : '')}/>
+            <img src="/images/leave_left.png" alt="" className={'index-car-leave-left animated' + (type === 'car' ? ' slideInLeft' : '')}/>
+            <img src="/images/leave_right.png" alt="" className={'index-car-leave-right animated' + (type === 'car' ? ' slideInRight' : '')}/>
           </div>
-
         </Draggable>
 
         <Draggable
           axis="x"
           bounds={{
             left: 0,
-            right: winWidth/2
+            right: winWidth / 2
           }}
           position={{
             x: this.state.accX,
@@ -89,45 +99,103 @@ class Index extends React.Component {
           onStart={this._starAcc}
           onDrag={this._dragAcc}
           onStop={this._stopAcc}
+        >
+          <div
+            className={'index-accessory' + (type === 'acc' ? ' active' : '')}
+            style={{
+              backgroundPositionX: -this.state.accX,
+              zIndex: this.state.accLayer
+            }}
           >
-          <div className="index-accessory" style={{
-            backgroundPositionX: -this.state.accX,
-            zIndex: this.state.accLayer
-          }}/>
+            <img
+              src="/images/oil_drop.png"
+              alt=""
+              className={'index-accessory-oil animated' + (type === 'acc' ? ' slideInDown' : '')}
+            />
+            <img
+              src="/images/index_acc_wheel.png"
+              alt=""
+              className="index-accessory-wheel"
+            />
+          </div>
         </Draggable>
 
-        <img src="/images/index_logo.png" alt="" className="index-logo"/>
+        {this.state.intro ? (
+          <div className="index-intro">
+            <div
+              className="index-intro-car"
+              style={{
+                backgroundSize: window.innerWidth
+              }}
+              onAnimationEnd={() => {
+                this.setState({
+                  intro: false
+                })
+              }}
+            />
+            <div
+              className="index-intro-acc"
+              style={{
+                backgroundSize: window.innerWidth
+              }}
+            />
+          </div>
+        ) : null}
 
-        <img src="/images/index_view_car.png" alt="" className="index-view-car" style={{
-          transform: `translateY(${viewCarTranY}px)`,
-          opacity: viewCarOpa
-        }} onClick={() => {
-          this.props.onViewCar && this.props.onViewCar()
-        }}/>
-        <img src="/images/index_view_accessory.png" alt="" className="index-view-acc" style={{
-          transform: `translateY(${viewAccTranY}px)`,
-          opacity: viewAccOpa
-        }} onClick={() => {
-          this.props.onViewAcc && this.props.onViewAcc()
-        }}/>
+        <div className="index-logo">
+          <img
+            src="/images/index_logo.gif"
+            alt=""
+            className="index-logo-main"
+          />
+          <img
+            src="/images/index_logo_sub.png"
+            alt=""
+            className="index-logo-sub"
+          />
+        </div>
 
+        <img
+          src="/images/index_view_car.png"
+          alt=""
+          className="index-view-car"
+          style={{
+            transform: `translateY(${viewCarTranY}px)`,
+            opacity: viewCarOpa
+          }}
+          onClick={() => {
+            this.props.onViewCar && this.props.onViewCar()
+          }}
+        />
+        <img
+          src="/images/index_view_accessory.png"
+          alt=""
+          className="index-view-acc"
+          style={{
+            transform: `translateY(${viewAccTranY}px)`,
+            opacity: viewAccOpa
+          }}
+          onClick={() => {
+            this.props.onViewAcc && this.props.onViewAcc()
+          }}
+        />
       </div>
-      )
+    )
   }
 
   _starCar = () => {
-    hideArrow()
     this.setState({
       carLayer: 99,
-      accLayer: 1
+      accLayer: 1,
+      type: ''
     })
   }
 
   _starAcc = () => {
-    hideArrow()
     this.setState({
       carLayer: 1,
-      accLayer: 99
+      accLayer: 99,
+      type: ''
     })
   }
 
@@ -144,32 +212,34 @@ class Index extends React.Component {
   }
 
   _stopCar = (e, position) => {
-    if (position.x > -(winWidth/4)) {
+    if (position.x > -(winWidth / 4)) {
       this.setState({
         carX: 0,
-        carLayer: 999
+        carLayer: 999,
+        type: 'car'
       })
       return
     }
-    showArrow()
     this.setState({
-      carX: -(winWidth/2),
-      carLayer: 1
+      carX: -(winWidth / 2),
+      carLayer: 1,
+      type: ''
     })
   }
 
   _stopAcc = (e, position) => {
-    if (position.x < winWidth/4) {
+    if (position.x < winWidth / 4) {
       this.setState({
         accX: 0,
-        accLayer: 999
+        accLayer: 999,
+        type: 'acc'
       })
       return
     }
-    showArrow()
     this.setState({
-      accX: (winWidth/2),
-      accLayer: 1
+      accX: winWidth / 2,
+      accLayer: 1,
+      type: ''
     })
   }
 }

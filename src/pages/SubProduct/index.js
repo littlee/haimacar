@@ -49,7 +49,7 @@ class SubProduct extends React.Component {
         >
           <div className="swiper-wrapper">
             <div className="swiper-slide">
-              <img src="/images/carousel_2.png" alt="" />
+              <img src="/images/carousel_2_20171012.png" alt="" />
             </div>
           </div>
           <div className="swiper-button-next" />

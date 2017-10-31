@@ -3,14 +3,29 @@
   background-repeat: no-repeat;
 
   &.out {
-    background: url(/images/model_out_bg.jpg);
+    background-color: transparent;
+
+    &.s5 {
+      background-image: url(/images/model_out_s5.jpg);
+    }
+    &.s5young {
+      background-image: url(/images/model_out_s5young.jpg);
+    }
+    &.m3 {
+      background-image: url(/images/model_out_m3.jpg);
+    }
+    &.m6 {
+      background-image: url(/images/model_out_m6.jpg);
+    }
   }
 
   &.in {
-    background: #202024;
+    background-image: none;
+    background-color: #202024;
   }
 
   &-out {
+    margin-top: 30%;
     &-title {
       text-align: center;
       font-size: 18px;
@@ -35,9 +50,7 @@
     }
 
     &-main {
-      width: 90%;
       margin: auto;
-      background-color: #333;
     }
   }
 
@@ -46,6 +59,14 @@
     justify-content: space-between;
     width: 90%;
     margin: 15px auto;
+
+    &.out {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 50px;
+      z-index: 9999;
+    }
   }
 
   &-btn {

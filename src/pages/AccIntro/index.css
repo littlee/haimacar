@@ -1,0 +1,61 @@
+.acc-intro-bg {
+  display: block;
+  width: 100%;
+}
+.acc-intro-text {
+  position: absolute;
+  width: 56.09375%;
+  top: 5.95238095%;
+  left: 23.90625%;
+}
+.acc-intro-scroll {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+.acc-intro-arrow {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 3%;
+  z-index: 9999;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-name: introArrow;
+}
+.acc-intro-arrow:before {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: 6px;
+  transform: rotate(-45deg);
+}
+.acc-intro-arrow:after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  left: -6px;
+  transform: rotate(45deg);
+}
+@keyframes introArrow {
+  from {
+    transform: translate3d(0, -150%, 0);
+  }
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+}

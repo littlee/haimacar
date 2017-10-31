@@ -4,10 +4,12 @@ import Index from './pages/Index'
 import Cars from './pages/Cars'
 import Model from './pages/Model'
 import Contact from './pages/Contact'
+import Category from './pages/Category'
 import Product from './pages/Product'
-import SubProduct from './pages/SubProduct'
 import Detail from './pages/Detail'
 import Upload from './pages/Upload'
+import AccIntro from './pages/AccIntro'
+import Test from './pages/Test'
 import qs from 'qs'
 import req from 'superagent'
 var wx = window.wx
@@ -28,6 +30,9 @@ class App extends Component {
         url: window.location.href
       })
       .end((err, res) => {
+        if (err) {
+          return err
+        }
         wx.config({
           debug: false,
           appId: res.body.appid,
@@ -39,30 +44,22 @@ class App extends Component {
 
         wx.ready(() => {
           wx.onMenuShareTimeline({
-            title: '海马汽车',
+            title: '海马汽车云端产品画册',
             link: window.location.origin,
             imgUrl: window.location.origin + '/images/wx.jpg',
-            success: function() {
-              // 用户确认分享后执行的回调函数
-            },
-            cancel: function() {
-              // 用户取消分享后执行的回调函数
-            }
+            success: function() {},
+            cancel: function() {}
           })
 
           wx.onMenuShareAppMessage({
-            title: '海马汽车',
-            desc: '== 海马汽车 ==',
+            title: '海马汽车云端产品画册',
+            desc: '海马纯正品质',
             link: window.location.origin,
             imgUrl: window.location.origin + '/images/wx.jpg',
             type: 'link',
             dataUrl: '',
-            success: function() {
-              // 用户确认分享后执行的回调函数
-            },
-            cancel: function() {
-              // 用户取消分享后执行的回调函数
-            }
+            success: function() {},
+            cancel: function() {}
           })
         })
       })
@@ -82,13 +79,24 @@ class App extends Component {
             onClickModel={this._clickModel}
             onClickBar={this._onClickBar}
             onClickCar={this._onClickCar}
+            changePage={this._changePage}
           />
         ) : null}
         {this.state.page === 'model' ? (
-          <Model onClickBar={this._onClickBar} onClickCar={this._onClickCar} />
+          <Model
+            onClickBar={this._onClickBar}
+            onClickCar={this._onClickCar}
+            changePage={this._changePage}
+          />
         ) : null}
         {this.state.page === 'contact' ? (
           <Contact
+            onClickBar={this._onClickBar}
+            onClickCar={this._onClickCar}
+          />
+        ) : null}
+        {this.state.page === 'category' ? (
+          <Category
             onClickBar={this._onClickBar}
             onClickCar={this._onClickCar}
           />
@@ -99,20 +107,26 @@ class App extends Component {
             onClickCar={this._onClickCar}
           />
         ) : null}
-        {this.state.page === 'subproduct' ? (
-          <SubProduct
-            onClickBar={this._onClickBar}
-            onClickCar={this._onClickCar}
-          />
-        ) : null}
         {this.state.page === 'detail' ? (
           <Detail onClickBar={this._onClickBar} onClickCar={this._onClickCar} />
         ) : null}
         {this.state.page === 'upload' ? (
           <Upload onClickBar={this._onClickBar} onClickCar={this._onClickCar} />
         ) : null}
+        {this.state.page === 'accintro' ? (
+          <AccIntro
+            onClickBar={this._onClickBar}
+            onClickCar={this._onClickCar}
+            changePage={this._changePage}
+          />
+        ) : null}
+        {this.state.page === 'test' ? <Test /> : null}
       </div>
     )
+  }
+
+  _changePage = page => {
+    this.setState({ page })
   }
 
   _onClickBar = () => {
@@ -141,7 +155,7 @@ class App extends Component {
 
   _viewAcc = () => {
     this.setState({
-      page: 'product'
+      page: 'accintro'
     })
   }
 

@@ -25,3 +25,18 @@ body {
 .hide {
   display: none !important;
 }
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+.hidden {
+  visibility: hidden;
+}
+img.ggskin_image {
+  width: 100%;
+}
